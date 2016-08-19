@@ -9,8 +9,8 @@ import org.junit.rules.ExpectedException;
 import pl.parser.nbp.enums.Currency;
 
 
-public class NbpDataTest {
-	private NbpData nbp;
+public class NbpCurrencyRateTest {
+	private NbpCurrencyRate nbp;
 	private String correctCurrencySymbol = "USD";
 	private String correctStartDate = "2013-04-16";
 	private String correctEndDate = "2013-05-10";
@@ -20,7 +20,7 @@ public class NbpDataTest {
 	
 	@Before
 	public void before(){
-		nbp = new NbpData();
+		nbp = new NbpCurrencyRate();
 	}
 	
 	@Test

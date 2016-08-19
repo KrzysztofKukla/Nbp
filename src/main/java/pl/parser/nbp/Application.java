@@ -11,9 +11,9 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class Application implements CommandLineRunner{
-	private NbpData nbpData;
+	private NbpCurrencyRate nbpData;
 	public Application() {
-		nbpData = new NbpData();
+		nbpData = new NbpCurrencyRate();
 	}
 	public void start(String[] args){
 		nbpData.setParameters(args);

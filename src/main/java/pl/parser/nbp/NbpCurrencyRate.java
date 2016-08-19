@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 import pl.parser.nbp.enums.Currency;
 
-public class NbpData {
+public class NbpCurrencyRate {
 	private Currency currencySymbol;
 	private LocalDate startDate;
 	private LocalDate endDate;
