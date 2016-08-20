@@ -40,7 +40,7 @@ public class NbpCurrencyRate {
 		System.out.println("Waluta: "+currencySymbol);
 		System.out.println("Przedział czasu: " + startDate + " - " + endDate);
 		System.out.println("Średni kurs kupna: " + DECIMAL_FORMAT.format(averageRate));
-		System.out.println("Odchylenie standardowe kupnów sprzedaży: " + DECIMAL_FORMAT.format(standardDeviation));
+		System.out.println("Odchylenie standardowe kursów sprzedaży: " + DECIMAL_FORMAT.format(standardDeviation));
 	}
 	private void getCurrencyRates(String args[]){
 		try{
@@ -66,9 +66,6 @@ public class NbpCurrencyRate {
 	private List<Rate> getCurrencyRates(){
 		String url = String.join("/", MAIN_URL, TABLE_TYPE, currencySymbol.toString(), startDate.toString(), endDate.toString(), FORMAT_XML);
 		RestTemplate restTemplate = new RestTemplate();
-		
-		ResponseEntity<String> responseString = restTemplate.getForEntity(url, String.class);
-		System.out.println(responseString);
 		
 		ResponseEntity<CurrencyRates> response = restTemplate.getForEntity(url, CurrencyRates.class);
 		if (response.getStatusCode()==HttpStatus.OK){
