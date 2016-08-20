@@ -27,28 +27,28 @@ public class NbpCurrencyRateTest {
 	public void whenAmountOfParametersIsNotEqual3ThenThrowIllegalArgumentException(){
 		String[] args = new String[]{"oneSign"};
 		exception.expect(IllegalArgumentException.class);
-		nbp.setParameters(args);
+		nbp.calculateRates(args);
 	}
 	
 	@Test
 	public void whenCurrencySymbolIsIncorrectThenThrowIllegalArgumentException(){
 		String[] args = new String[]{"xxx", correctStartDate, correctEndDate};
 		exception.expect(IllegalArgumentException.class);
-		nbp.setParameters(args);
+		nbp.calculateRates(args);
 	}
 	
 	@Test
 	public void whenStartDateIsIncorrectThenThrowIllegalArgumentException(){
 		String[] args = new String[]{correctCurrencySymbol, "16th of April 2103", correctEndDate};
 		exception.expect(IllegalArgumentException.class);
-		nbp.setParameters(args);
+		nbp.calculateRates(args);
 	}
 	
 	@Test
 	public void whenEndDateIsIncorrectThenThrowIllegalArgumentException(){
 		String[] args = new String[]{correctCurrencySymbol, correctStartDate, "10th of May 2013"};
 		exception.expect(IllegalArgumentException.class);
-		nbp.setParameters(args);
+		nbp.calculateRates(args);
 	}
 	
 	@Test
@@ -57,13 +57,13 @@ public class NbpCurrencyRateTest {
 		String endDate = "2013-04-22";
 		String[] args = new String[]{correctCurrencySymbol, startDate, endDate};
 		exception.expect(IllegalArgumentException.class);
-		nbp.setParameters(args);
+		nbp.calculateRates(args);
 	}
 	
 	@Test
 	public void whenInputParametersAreOkThenNbpDataFielsAreSet(){
 		String[] args = new String[]{correctCurrencySymbol, correctStartDate, correctEndDate};
-		nbp.setParameters(args);
+		nbp.calculateRates(args);
 		assertEquals(nbp.getCurrencySymbol(), Currency.USD);
 		assertEquals(nbp.getStartDate(), LocalDate.parse(correctStartDate));
 		assertEquals(nbp.getEndDate(), LocalDate.parse(correctEndDate));
