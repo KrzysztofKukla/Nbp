@@ -2,6 +2,12 @@ package pl.parser.nbp.model;
 
 import javax.xml.bind.annotation.XmlElement;
 
+/**
+ * Rate tag from xml file
+ * 
+ * @author Krzysztof
+ *
+ */
 public class Rate {
 	private String EffectiveDate;
 	private String Bid;

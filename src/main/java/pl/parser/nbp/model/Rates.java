@@ -4,6 +4,12 @@ import java.util.List;
 
 import javax.xml.bind.annotation.XmlElement;
 
+/**
+ * Rates tag from xml file
+ * 
+ * @author Krzysztof
+ *
+ */
 public class Rates {
 	
 	private List<Rate> rates;

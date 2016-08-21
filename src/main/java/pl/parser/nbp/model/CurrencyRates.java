@@ -3,6 +3,12 @@ package pl.parser.nbp.model;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+/**
+ * Root tag of xml file
+ * 
+ * @author Krzysztof
+ *
+ */
 @XmlRootElement(name = "ExchangeRatesSeries")
 public class CurrencyRates {
 	private String currency;
